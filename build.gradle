@@ -1,12 +1,21 @@
+apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.rishabh-gofynd'  // Replace with your GitHub username
 version = '4.11.6'  // Version you want to assign
 
+android {
+    compileSdkVersion 34  // Replace with the desired compile SDK version
+    defaultConfig {
+        minSdkVersion 21  // Replace with your minimum SDK version
+        targetSdkVersion 34  // Replace with your target SDK version
+    }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            // Specify the AAR file path here
+            // Reference your AAR file
             artifact('fynd-analytics-android-release-4.11.6.aar') {
                 extension 'aar'
             }
@@ -16,7 +25,6 @@ publishing {
             version = '4.11.6'  // Your version
         }
     }
-
     repositories {
         maven {
             url "https://jitpack.io"
