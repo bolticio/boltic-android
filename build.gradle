@@ -1,3 +1,14 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0' // Specify the version here
+    }
+}
+
+
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
