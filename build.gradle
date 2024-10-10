@@ -1,0 +1,25 @@
+apply plugin: 'maven-publish'
+
+group = 'com.github.rishabh-gofynd'  // Replace with your GitHub username
+version = '4.11.6'  // Version you want to assign
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            // Specify the AAR file path here
+            artifact('fynd-analytics-android-release-4.11.6.aar') {
+                extension 'aar'
+            }
+
+            groupId = 'com.github.rishabh-gofynd'  // Replace with your GitHub username
+            artifactId = 'boltic-android'  // Replace with your project name
+            version = '4.11.6'  // Your version
+        }
+    }
+
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+}
